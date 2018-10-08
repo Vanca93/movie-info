@@ -1,0 +1,13 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: orange;
+    margin: 10px;
+}
+
+.card img, .card h5, .card p {
+    margin: 10px;
+    width: 90%;
+    text-align: center;
+}
