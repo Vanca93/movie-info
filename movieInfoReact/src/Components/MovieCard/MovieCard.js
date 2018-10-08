@@ -1,17 +1,20 @@
 import React from 'react';
 import './moviecard.css';
 
-const MovieCard = props => (
-    <div className="card">
-        <img src={props.movieData.Poster} alt="Movie Poster"/>
-        <div className="card-body">
-        <h5 className="card-title">Movie Title: {props.movieData.Title}</h5>
-        <p className="card-text">Year: {props.movieData.Year}</p>
-        <p className="card-text">Director: {props.movieData.Director}</p>
-        <p className="card-text">Genre: {props.movieData.Genre}</p>
-        <p className="card-text">IMDB Rating: {props.movieData.imdbRating}</p>
+const MovieCard = props => {
+    return (
+        <div className="card">
+            <div>
+                <img src={props.movie.Poster} alt="Movie Poster"/>
+            </div>
+            <div className="card-body">
+            <h5 className="card-title">Movie Title: {props.movie.Title}</h5>
+            <p className="card-text">Year: {props.movie.Year}</p>
+            </div>
         </div>
-    </div>
-)
+    );
+}
+
+
 
 export default MovieCard;

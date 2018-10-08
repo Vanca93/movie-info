@@ -11,8 +11,6 @@ class App extends Component {
       input: '',
       movieData: null,
     });
-
-    this.setMovieData = this.setMovieData.bind(this)
   }
 
   setMovieData(data) {
@@ -27,7 +25,7 @@ class App extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    fetch(`${baseURL}t=${this.state.input}`)
+    fetch(`${baseURL}s=${this.state.input}`)
       .then(response => response.json())
       .then(json => {
         this.setMovieData(json)
@@ -37,16 +35,23 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Navbar 
-          setMovieData={this.setMovieData}
+        <Navbar
           handleChange={this.handleChange}
           handleClick={this.handleClick}
         />
+        <div className="resultContainer">
         {
           this.state.movieData && (
-            <MovieCard  movieData={this.state.movieData} />
+            this.state.movieData.Search.map(movie => 
+              <MovieCard
+                movieData={this.state.movieData}
+                setMovieData={this.setMovieData}
+                movie={movie}
+              />
+            )
           )
         }
+        </div>
       </div>
     );
   }

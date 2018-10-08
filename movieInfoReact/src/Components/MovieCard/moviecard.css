@@ -4,9 +4,10 @@
     align-items: center;
     background-color: orange;
     margin: 10px;
+    max-width: 300px;
 }
 
-.card img, .card h5, .card p {
+.card div img, .card h5, .card p {
     margin: 10px;
     width: 90%;
     text-align: center;
